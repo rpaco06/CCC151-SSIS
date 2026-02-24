@@ -8,6 +8,10 @@ COLLEGES_FILE = os.path.join(BASE_DIR, "data", "colleges.csv")
 PROGRAMS_FILE = os.path.join(BASE_DIR, "data", "programs.csv")
 STUDENTS_FILE = os.path.join(BASE_DIR, "data", "students.csv")
 
+COLLEGE_FIELDS = ["code", "name"]
+PROGRAM_FIELDS = ["code", "name", "college"]
+STUDENT_FIELDS = ["id", "firstname", "lastname", "program", "year", "gender"]
+
 def load_csv(filepath, fields):
     if not os.path.exists(filepath):
         return []
@@ -47,3 +51,4 @@ def load_students():
 def save_students(rows):
 
     save_csv(STUDENTS_FILE, STUDENT_FIELDS, rows)
+
